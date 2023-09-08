@@ -283,7 +283,7 @@
 
   {{#if site.categories}}
     {{#each site.categories as |category|}}
-      {{#if (contains (split (theme-setting 'apply_to_these_categories_only') '|') category.slug)}}
+      {{#if (contains (theme-setting 'apply_to_these_categories_only') category.slug)}}
 
 
     {{#if (theme-setting 'show_topic_author_column_first')}}
@@ -649,7 +649,7 @@
   {{/unless}}
   {{#if site.categories}}
     {{#each site.categories as |category|}}
-      {{#if (contains (split (theme-setting 'apply_to_these_categories_only') '|') category.slug)}}
+    {{#if (contains (theme-setting 'apply_to_these_categories_only') category.slug)}}
 
     {{#if (theme-setting 'show_topic_author_column_first')}}
      {{#if showPosters}}
@@ -832,7 +832,8 @@
 
   {{#if site.categories}}
     {{#each site.categories as |category|}}
-      {{#if (contains (split (theme-setting 'apply_to_these_categories_only') '|') category.slug)}}
+    {{#if (contains (theme-setting 'apply_to_these_categories_only') category.slug)}}
+      
     {{#if (theme-setting 'show_topic_author_column_last_on_categories_page')}}
     <PluginOutlet @name="above-latest-topic-list-item" @connectorTagName="div" />
      <div class="main-link">
