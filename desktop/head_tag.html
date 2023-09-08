@@ -1,3 +1,14 @@
+<script>
+api.onPageChange((url, title) => {
+  const categories = api.container.lookup('controller:site').get('categories');
+  const selectedCategories = settings.apply_to_these_categories_only.split('|');
+
+  categories.forEach(category => {
+    category.set('isSelectedCategory', selectedCategories.includes(category.slug));
+  });
+});
+</script>
+
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
 
       {{#if showParticipants}}
@@ -283,7 +294,7 @@
 
   {{#if site.categories}}
     {{#each site.categories as |category|}}
-      {{#if (contains (theme-setting 'apply_to_these_categories_only') category.slug)}}
+      {{#if category.isSelectedCategory}}
 
 
     {{#if (theme-setting 'show_topic_author_column_first')}}
@@ -647,9 +658,10 @@
     {{/if}}
 
   {{/unless}}
+      
   {{#if site.categories}}
     {{#each site.categories as |category|}}
-    {{#if (contains (theme-setting 'apply_to_these_categories_only') category.slug)}}
+      {{#if category.isSelectedCategory}}
 
     {{#if (theme-setting 'show_topic_author_column_first')}}
      {{#if showPosters}}
@@ -832,7 +844,7 @@
 
   {{#if site.categories}}
     {{#each site.categories as |category|}}
-    {{#if (contains (theme-setting 'apply_to_these_categories_only') category.slug)}}
+      {{#if category.isSelectedCategory}}
       
     {{#if (theme-setting 'show_topic_author_column_last_on_categories_page')}}
     <PluginOutlet @name="above-latest-topic-list-item" @connectorTagName="div" />
