@@ -1,12 +1,18 @@
 <script>
-api.onPageChange((url, title) => {
-  const categories = api.container.lookup('controller:site').get('categories');
-  const selectedCategories = settings.apply_to_these_categories_only.split('|');
+  api.onPageChange((url, title) => {
+    const categories = api.container
+      .lookup("controller:site")
+      .get("categories");
+    const selectedCategories =
+      settings.apply_to_these_categories_only.split("|");
 
-  categories.forEach(category => {
-    category.set('isSelectedCategory', selectedCategories.includes(category.slug));
+    categories.forEach((category) => {
+      category.set(
+        "isSelectedCategory",
+        selectedCategories.includes(category.slug)
+      );
+    });
   });
-});
 </script>
 
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
@@ -658,7 +664,7 @@ api.onPageChange((url, title) => {
     {{/if}}
 
   {{/unless}}
-      
+
   {{#if site.categories}}
     {{#each site.categories as |category|}}
       {{#if category.isSelectedCategory}}
@@ -845,7 +851,7 @@ api.onPageChange((url, title) => {
   {{#if site.categories}}
     {{#each site.categories as |category|}}
       {{#if category.isSelectedCategory}}
-      
+
     {{#if (theme-setting 'show_topic_author_column_last_on_categories_page')}}
     <PluginOutlet @name="above-latest-topic-list-item" @connectorTagName="div" />
      <div class="main-link">
