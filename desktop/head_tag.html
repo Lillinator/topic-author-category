@@ -650,6 +650,7 @@
   {{#if site.categories}}
     {{#each site.categories as |category|}}
       {{#if (contains (split (theme-setting 'apply_to_these_categories_only') '|') category.slug)}}
+
     {{#if (theme-setting 'show_topic_author_column_first')}}
      {{#if showPosters}}
         {{raw "topic-list-header-column" order='posters' forceName=(theme-i18n "author") }}
@@ -730,7 +731,8 @@
   {{/if}}
 </script>
 
-	@@ -765,197 +376,94 @@
+<script
+  type="text/x-handlebars"
   data-template-name="components/latest-topic-list-item"
 >
 
