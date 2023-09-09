@@ -15,7 +15,7 @@
         {{/if}}
       </th>
     {{/if}}
-    {{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect canDoBulkActions=canDoBulkActions}}
+    {{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect canDoBulkActions=canDoBulkActions showTopicsAndRepliesToggle=showTopicsAndRepliesToggle newListSubset=newListSubset newRepliesCount=newRepliesCount newTopicsCount=newTopicsCount}}
     {{raw-plugin-outlet name="topic-list-header-after-main-link"}}
     {{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies' ariaLabel=(i18n "sr_replies")}}
     {{#if showLikes}}
