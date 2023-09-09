@@ -19,7 +19,9 @@ function initializeTheme(api) {
     });
   });
 }
-
+module.exports = function() {
+  withPluginApi('0.12.3', api => initializeTheme(api));
+} 
 
 </script>
 
