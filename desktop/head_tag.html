@@ -1,4 +1,9 @@
-<script>
+<script type="text/javascript">
+
+import { withPluginApi } from 'discourse/lib/plugin-api';
+
+function initializeTheme(api) {
+
   api.onPageChange((url, title) => {
     const categories = api.container
       .lookup("controller:site")
@@ -13,6 +18,12 @@
       );
     });
   });
+}
+
+export default function() {
+  withPluginApi('0.8.31', api => initializeTheme(api));
+}
+
 </script>
 
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
