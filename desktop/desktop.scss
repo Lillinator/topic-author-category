@@ -16,8 +16,10 @@
   }
 }
 
-@else body.no_cats {
+@else { 
+  body.no_cats {
   display: block;
+  }
 }
 
 
