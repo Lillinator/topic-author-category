@@ -1,6 +1,6 @@
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
 
-  <div class='cats'>
+  <div class="cats">
 
       {{#if showParticipants}}
         {{raw "list/posters-column" posters=topic.participants}}
@@ -287,7 +287,7 @@
 
 
   </div>
-  <div class='no_cats'>
+  <div class="no_cats">
 
   {{~raw-plugin-outlet name="topic-list-before-columns"}}
 
@@ -387,7 +387,7 @@
 
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
 
-  <div class='cats'>
+  <div class="cats">
 
     {{#if (theme-setting 'show_topic_author_column_first')}}
 
@@ -474,7 +474,7 @@
     {{/if}}
 
   </div>
-  <div class='no_cats'>
+  <div class="no_cats">
 
   {{~raw-plugin-outlet name="topic-list-header-before"~}}
   {{#if bulkSelectEnabled}}
@@ -507,7 +507,7 @@
   data-template-name="components/latest-topic-list-item"
 >
 
-  <div class='cats'>
+  <div class="cats">
 
     {{#if (theme-setting 'show_topic_author_column_last_on_categories_page')}}
     <PluginOutlet @name="above-latest-topic-list-item" @connectorTagName="div" />
@@ -602,7 +602,7 @@
 
 
   </div>
-  <div class='no_cats'>
+  <div class="no_cats">
 
 
   <PluginOutlet @name="above-latest-topic-list-item" @connectorTagName="div" />
