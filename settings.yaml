@@ -26,5 +26,5 @@ apply_to_these_categories_only:
   type: list
   list_type: simple
   default: ""
-  description: 
+  description:
     en: "Category slugs of categories this setting should only appy to. Leave blank to apply to all categories. Slugs are the lower case names found in the category URL."

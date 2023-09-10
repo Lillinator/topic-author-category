@@ -2,20 +2,20 @@
 
 @if $apply_to_these_categories_only !="" {
 
-$list: str-to-list("#{$apply_to_these_categories_only}", "|");
-  
-body.no_cats,
-body.cats {
-  display: none;
-}
+  $list: str-to-list("#{$apply_to_these_categories_only}", "|");
 
-@each $catslug in $list {
-  body.category-$catslug .cats {
-  display: block;
+  body.no_cats,
+  body.cats {
+    display: none;
   }
-}
-@else 
-  body.no_cats {
+
+  @each $catslug in $list {
+    body.category-$catslug .cats {
+      display: block;
+    }
+  }
+
+  @else body.no_cats {
     display: block;
   }
 }
