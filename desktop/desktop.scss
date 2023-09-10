@@ -10,7 +10,7 @@
   }
 
   @each $catslug in $list {
-    body.category-#{$category} {
+    body.category-#{$catslug} {
       .cats {
         display: block;
       }
