@@ -2,9 +2,16 @@ import Component from "@ember/component";
 import { equal } from "@ember/object/computed";
 import discourseComputed from "discourse-common/utils/decorators";
 
-const rawCategoryTopicAuther = settings.apply_to_these_categories_only.split("|");
+const rawCategoryTopicAuthor = settings.apply_to_these_categories_only.split("|");
 
 export default Component.extend({
+  
+  
+  
+  
+  
+  
+  
   noCategoryStyle: equal("siteSettings.category_style", "none"),
   boxStyle: equal("siteSettings.desktop_category_page_style", "categories_boxes"),
 
