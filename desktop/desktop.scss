@@ -17,6 +17,9 @@
 }
 
 @else { 
+  body.cats {
+    display: none;
+  }
   body.no_cats {
   display: block;
   }
