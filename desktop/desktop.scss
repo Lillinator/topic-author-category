@@ -3,11 +3,6 @@
     display: none;
   }
 
-  body.no_cats {
-    display: block;
-  }
-
-
 
 @if $show_topic_author_column_last =="false" {
   .topic-list .posters {
