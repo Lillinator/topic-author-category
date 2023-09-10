@@ -1,24 +1,4 @@
-@import "str-to-list";
 
-@if $apply_to_these_categories_only !="" {
-
-  $list: str-to-list("#{$apply_to_these_categories_only}", "|");
-
-  body.no_cats,
-  body.cats {
-    display: none;
-  }
-
-  @each $catslug in $list {
-    body.category-#{$catslug} {
-      .cats {
-        display: block;
-      }
-    }
-  }
-}
-
-@else {
  body.cats {
     display: none;
   }
@@ -26,7 +6,7 @@
   body.no_cats {
     display: block;
   }
-}
+
 
 
 @if $show_topic_author_column_last =="false" {
