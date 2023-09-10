@@ -4,24 +4,27 @@
 
   $list: str-to-list("#{$apply_to_these_categories_only}", "|");
 
-.no_cats,
-.cats {
+  body.no_cats,
+  body.cats {
     display: none;
   }
 
   @each $catslug in $list {
-    .category-$catslug .cats {
-      display: block;
+    body.category-#{$category} {
+      .cats {
+        display: block;
+      }
     }
   }
 }
 
-@else { 
-  .cats {
+@else {
+ body.cats {
     display: none;
   }
-  .no_cats {
-  display: block;
+
+  body.no_cats {
+    display: block;
   }
 }
 
