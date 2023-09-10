@@ -1,14 +1,13 @@
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
 
+      <div class='cats'>
       {{#if showParticipants}}
         {{raw "list/posters-column" posters=topic.participants}}
       {{/if}}
 
-  {{#unless (theme-setting 'apply_to_these_categories_only')}}
-
-
     {{#if (theme-setting 'show_topic_author_column_first')}}
 
+      
       <td class='author topic-list-data'>
         <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
           {{#if (theme-setting 'show_author_username')}}
@@ -556,13 +555,15 @@
       {{/if}}
     {{/each}}
   {{/if}}
+
+</div>
+      
 </script>
 
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
 
-  {{#unless (theme-setting 'apply_to_these_categories_only')}}
-
-
+  <div class='cats'>
+      
     {{#if (theme-setting 'show_topic_author_column_first')}}
 
      {{#if showPosters}}
@@ -730,13 +731,16 @@
       {{/if}}
     {{/each}}
   {{/if}}
+</div>
+      
 </script>
 
 <script
   type="text/x-handlebars"
   data-template-name="components/latest-topic-list-item"
 >
-
+      <div class='cats'>
+      
   {{#unless (theme-setting 'apply_to_these_categories_only')}}
 
   {{#if (theme-setting 'show_topic_author_column_last_on_categories_page')}}
@@ -928,4 +932,6 @@
       {{/if}}
     {{/each}}
   {{/if}}
+      
+</div>
 </script>
