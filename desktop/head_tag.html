@@ -8,17 +8,17 @@
 
 
     {{#if (theme-setting 'show_topic_author_column_first')}}
-    <div class="cats">
-      <td class='author topic-list-data'>
+    
+      <td class='author topic-list-data'><span class="cats">
         <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
           {{#if (theme-setting 'show_author_username')}}
             {{topic.creator.username}}
             {{else}}
             {{avatar topic.creator imageSize="45"}}
           {{/if}}
-        </a>
+        </a></span>
       </td>
-    </div>
+    
     {{~raw-plugin-outlet name="topic-list-before-columns"}}
 
     {{#if bulkSelectEnabled}}
